@@ -23,7 +23,8 @@ public class ConsoleWorker {
 
         System.out.println(key);
 
-        System.out.println("Прошу ввести  алгебраическое выражение 'Пример'  1+1 ");
+        System.out.println("Порядок ввода значения  (тип перации тип значения(выше указано какие операции возможны с какими типами), 1 оператор, 2 оператор");
+        System.out.println("Прошу ввести  алгебраическое выражение пример -  +Int,1,1");
 
         String expression = reader.readLine();
 
