@@ -10,9 +10,7 @@ import java.util.Map;
  */
 public class StockAllImplementations {
 
-
-    private Map<String, Calculator > implementsFunctionMap = new HashMap<>();
-
+     private Map<String, Calculator > implementsFunctionMap = new HashMap<>();
 
     public StockAllImplementations() {
 
@@ -22,12 +20,12 @@ public class StockAllImplementations {
         this.implementsFunctionMap.put(info,addImplements);
     }
 
-
-
-
     public Map <String, Calculator > getImplementsFunctionMap() {
         return implementsFunctionMap;
     }
 
+    public void setImplementsFunctionMap(Map<String, Calculator> implementsFunctionMap) {
+        this.implementsFunctionMap = implementsFunctionMap;
+    }
 
 }
