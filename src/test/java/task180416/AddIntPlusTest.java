@@ -1,6 +1,8 @@
 package task180416;
 
 import org.testng.Assert;
+
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -9,13 +11,14 @@ import java.util.List;
 
 
 /**
- * Created by Pavel on 21.04.2016.
+ * Created by Pavel on 29.04.2016.
  */
-public class AddIntMinusTest {
-
+public class AddIntPlusTest {
+    @BeforeTest
 
     @Test
     public void testCalculate() throws Exception {
+
         ParseChar parse = new ParseChar();
         StockAllImplementations body = new StockAllImplementations();
         Calculator add = new AddIntPlus();
@@ -29,16 +32,14 @@ public class AddIntMinusTest {
         consoleWorker.setKey(body.getImplementsFunctionMap().keySet());
         BodyCalculator bodyCalculator = new BodyCalculator(consoleWorker);
         bodyCalculator.setImplementsFunctionMap(body.getImplementsFunctionMap());
-
-        char[] temp  = {'-',',','2',',','1'};
+        char[] temp  = {'+',',','2',',','1'};
         List <String> working  = new ArrayList<>();
         working.addAll(parse.parsing(temp));
         String identifier = working.get(0).toString();
         Calculator identifierCalculator = body.getImplementsFunctionMap().get(identifier);
         String actuals = identifierCalculator.calculate(working);
-        String expected = "2-1=1";
+        String expected = "2+1=3";
         Assert.assertEquals(expected, actuals);
-
     }
 
 }

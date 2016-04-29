@@ -4,6 +4,7 @@
         <classes>
             <class name="task180416.AddIntMinusTest"/>
             <class name="task180416.ParseTest"/>
+            <class name="task180416.AddIntPlusTest"/>
         </classes>
     </test>
 </suite> 

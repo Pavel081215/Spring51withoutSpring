@@ -8,13 +8,13 @@ import java.util.Map;
 /**
  * Created by Pavel on 20.04.2016.
  */
-public class Body  {
+public class StockAllImplementations {
 
 
     private Map<String, Calculator > implementsFunctionMap = new HashMap<>();
 
 
-    public Body() {
+    public StockAllImplementations() {
 
     }
 

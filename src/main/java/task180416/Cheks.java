@@ -7,7 +7,7 @@ public class Cheks {
     public static void main(String[] args) throws IOException {
 
 
-        Body body = new Body();
+        StockAllImplementations body = new StockAllImplementations();
         Calculator add = new AddIntPlus();
         Calculator add2 = new AddIntMinus();
         Calculator add3 = new AddIntPlus();
@@ -17,7 +17,7 @@ public class Cheks {
         body.addImplementsFunction("- long", add3);
 
 
-        ConsoleWorker consoleWorker = new ConsoleWorker();
+        InputWithConsole consoleWorker = new InputWithConsole();
         consoleWorker.setKey(body.getImplementsFunctionMap().keySet());
 
         BodyCalculator bodyCalculator = new BodyCalculator(consoleWorker);

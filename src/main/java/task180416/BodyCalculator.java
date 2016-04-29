@@ -7,22 +7,23 @@ import java.util.List;
 import java.util.Map;
 
 
-public class BodyCalculator<T> {
+public class BodyCalculator {
 
     private Map<String,Calculator> implementsFunctionMap = new  HashMap <>();
-    Parse parse = new Parse();
 
-    private ConsoleWorker consoleWorker;
+    ParseChar parseChar = new ParseChar();
+
+
+    private InputWithConsole inputWithConsole;
 
     public void setImplementsFunctionMap(Map<String, Calculator> implementsFunctionMap) {
         this.implementsFunctionMap = implementsFunctionMap;
     }
 
-    public BodyCalculator(ConsoleWorker consoleWorker) throws IOException {
-        this.consoleWorker = consoleWorker;
+
+    public BodyCalculator(InputWithConsole consoleWorker) throws IOException {
+        this.inputWithConsole = consoleWorker;
     }
-
-
 
 
     public void solution() throws IOException {
@@ -31,9 +32,9 @@ public class BodyCalculator<T> {
 
         String solution ;
 
-        char[] temp  = consoleWorker.inputWithConsole();
+        char[] temp  = inputWithConsole.inputWithConsole();
 
-        working.addAll(parse.parsing(temp));
+        working.addAll(parseChar.parsing(temp));
 
         String identifier = working.get(0).toString();
 

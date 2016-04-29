@@ -10,11 +10,8 @@ public class AddIntMinus implements Calculator {
     public String calculate(List calculator) {
         int operator1 = Integer.parseInt(calculator.get(1).toString());
         int operator2 = Integer.parseInt(calculator.get(2).toString());
-
         int resultInt = (operator1 - operator2);
-
-        String result = Integer.toString(resultInt);
-
+        String result = operator1 + "-" + operator2 + "=" +Integer.toString(resultInt);
         return result;
     }
 }
