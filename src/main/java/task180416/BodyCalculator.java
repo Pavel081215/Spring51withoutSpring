@@ -2,48 +2,61 @@ package task180416;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.List;
-import java.util.Map;
+
 
 
 public class BodyCalculator {
 
-    private Map<String,Calculator> implementsFunctionMap = new  HashMap <>();
 
-    ParseChar parseChar = new ParseChar();
+    private StockAllImplementations stockAllImplementations;
 
+    private ParseChar parseChar;
 
     private InputWithConsole inputWithConsole;
 
-    public void setImplementsFunctionMap(Map<String, Calculator> implementsFunctionMap) {
-        this.implementsFunctionMap = implementsFunctionMap;
+    private List working = new ArrayList<>();
+
+
+    public void setStockAllImplementations(StockAllImplementations stockAllImplementations) {
+        this.stockAllImplementations = stockAllImplementations;
     }
 
+
+    public void setParseChar(ParseChar parseChar) {
+        this.parseChar = parseChar;
+    }
 
     public BodyCalculator(InputWithConsole consoleWorker) throws IOException {
         this.inputWithConsole = consoleWorker;
     }
 
 
-    public void solution() throws IOException {
+    public String solution() throws IOException {
 
-        List working  = new ArrayList<>();
+        String solution;
 
-        String solution ;
-
-        char[] temp  = inputWithConsole.inputWithConsole();
+        char[] temp = inputWithConsole.inputWithConsole();
 
         working.addAll(parseChar.parsing(temp));
 
         String identifier = working.get(0).toString();
 
-        Calculator identifierCalculator = implementsFunctionMap.get(identifier);
+        Calculator identifierCalculator = stockAllImplementations.getImplementsFunctionMap().get(identifier);
 
         solution = identifierCalculator.calculate(working);
 
         System.out.println(solution);
+
+        return solution;
     }
 
 
-}
+
+
+
+    }
+
+
+

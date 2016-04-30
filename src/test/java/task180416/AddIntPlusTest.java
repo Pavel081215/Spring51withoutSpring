@@ -29,9 +29,10 @@ public class AddIntPlusTest {
         body.addImplementsFunction("+ long", add3);
         body.addImplementsFunction("- long", add3);
         InputWithConsole consoleWorker = new InputWithConsole();
-        consoleWorker.setKey(body.getImplementsFunctionMap().keySet());
+        consoleWorker.setStockAllImplementations(body);
         BodyCalculator bodyCalculator = new BodyCalculator(consoleWorker);
-        bodyCalculator.setImplementsFunctionMap(body.getImplementsFunctionMap());
+        bodyCalculator.setParseChar(parse);
+        bodyCalculator.setStockAllImplementations(body);
         char[] temp  = {'+',',','2',',','1'};
         List <String> working  = new ArrayList<>();
         working.addAll(parse.parsing(temp));
